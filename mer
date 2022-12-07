@@ -1,0 +1,32 @@
+classDiagram
+    Gitare <|-- Acustick
+    Gitare <|-- Electro
+    Gitare --* diss :if amount amount>=2
+    Gitare --* pokupka :if amount =1
+    Gitare : +stoimost
+    Gitare : +name
+    Gitare : +diler
+    Gitare : +amount
+
+    class pokupka{
+        +pokupka_gitari()
+    }
+
+    class diss{
+        disscount = (amount*stoimost/100*15)
+    }
+    diss --> pokupka
+
+    class Acustick{
+        +color
+        +material
+        +radius
+        +rad_grif
+    }
+
+    class Electro{
+        +color
+        +material
+        +radius
+        +rad_grif
+    }
